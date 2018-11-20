@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+
+
+body{
+    background-color: #333333;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.title{
+    font-family: 'Acme', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border: 1px dashed #555555;
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+}
+
+.button_container{   /*This is container of hover button*/
+    width: inherit;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button1,.button2,.button3,.button4{  /*This is group of hover button*/
+    margin: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    p{
+        font-size: 30px;
+        margin: 0;
+        padding: 10px 50px;
+        color: #f8f8f8;
+        font-family: 'Acme', sans-serif;
+        cursor: pointer;
+       transition: all 0.5s;
+    }
+}
+
+/*This is hover button 1*/
+.button1{
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #555555;
+    display: block;
+    transform: skewX(30deg);
+    overflow: hidden;
+    p{
+        transform: skewX(-30deg);
+        &:hover ~ .effect{
+            left: 300px;
+        }
+    }
+    .effect{
+        position: absolute;
+        top: -70px;
+        left: -100px;
+        width: 50px;
+        height: 200px;
+        transform: rotate(-40deg);
+        background-color: rgba($color: #fff, $alpha: 0.5);
+        z-index: -1;
+        transition: all 0.3s;
+    }
+}
+
+/*This is hover button 2*/
+.button2{
+   display: block;
+   position: relative;
+   background-color: transparent;
+   border: 1px solid #555555;
+   overflow: hidden;
+   p{
+       &:hover{
+           color: #222222;
+       }
+       &:hover ~ .effect{
+           top: 0;
+           transform: rotate(0deg);
+       }
+   }
+   .effect{
+       position: absolute;
+       left: 0;
+       top: -80px;
+       width: 100%;
+       height: 100%;
+       background-color: rgba($color: #fff, $alpha: 0.5);
+       transform-origin: left bottom;
+       transform: rotate(-30deg);
+       transition: all 0.3s;
+       z-index: -1;
+   }
+}
+
+
+/*This is hover button 3*/
+.button3{
+   display: block;
+   position: relative;
+   background-color: transparent;
+   border: 1px solid #555555;
+  
+   p{
+      
+       cursor: pointer;
+       transition: all 0.5s;
+       &:hover{
+           color: #000;
+       }
+       &:hover ~ .effect{
+        width: 100%;
+       }
+   }
+   .effect{
+       position: absolute;
+       left: 50%;
+       top: 0;
+       transform: translate(-50%);
+       width: 0px;
+       height: 100%;
+       background-color: rgba($color: #fff, $alpha: 0.5);
+       transition: all 0.3s;
+       z-index: -1;
+   }
+}
+
+/*This is hover button 4*/
+.button4{
+    display: block;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #555555;
+    transform: skewX(-30deg);
+    overflow: hidden;
+    P{
+        transform: skewX(30deg);
+        &:hover ~ .effect{
+            left: 300px;
+        }
+    }
+    .effect{
+        position: absolute;
+        left: -100px;
+        top: -50px;
+        width: 50px;
+        height: 150px;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        z-index: -1;
+        transition: all 0.3s;
+    }
+}
